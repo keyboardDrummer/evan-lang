@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A vaguely Lispy language in the context of JavaScript.",
   "scripts": {
-    "postinstall": "mkdir test\\actual",
+    "postinstall": "",
     "test": "node dist\\test\\test-all.js && comp test\\actual test\\expected /a /l",
     "pretest": "npm run build-core && copy meta\\meta-model.json dist\\meta\\",
     "start": "http-server -p 8031 ide\\web",
@@ -11,7 +11,7 @@
     "build-meta": "node meta\\build-meta.js",
     "build-core": "tsc",
     "prebuild-core": "npm run build-meta",
-    "build-web-only": "browserify ide\\index.tsx -p [ tsify ] -o ide\\web\\bundle.js",
+    "build-web-only": "browserify ide\\index.tsx -p [ tsify ] -d -o ide\\web\\bundle.js",
     "build-web": "npm run build-web-only",
     "prebuild-web": "npm run build-core",
 	"build": "npm run build-web",
