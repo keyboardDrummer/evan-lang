@@ -97,8 +97,8 @@ export function evaluate(json: any): any {
 
 	function evaluateLet(letExpression: sTypes.ILet, context: IContext): any {
 		const newContext = cloneContext(context);
-		const evaluatedValue = evaluateInt(letExpression.body, context);
-		newContext.letValues[letExpression.name] = evaluatedValue;
+		const valueEval = evaluateInt(letExpression.body, context);
+		newContext.letValues[letExpression.name] = valueEval;
 		return evaluateInt(letExpression.value, newContext)
 	}
 
