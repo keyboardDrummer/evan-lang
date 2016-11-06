@@ -1,0 +1,11 @@
+[
+	{
+		"$sType": "let",
+		"name": "x",
+		"body": 2,
+		"value": {
+				"$sType": "value reference",
+				"name": "y"
+			}
+	}
+]

@@ -1,5 +1,6 @@
 import {observable} from "mobx";
 
+const resourceBadLetReference = require("../../data/badLetReference.json");
 const resourceLet = require("../../data/let.json");
 const resourceFib = require("../../data/fib.json");
 const resourceSimple = require("../../data/simple.json");
@@ -26,7 +27,8 @@ export class ResourcesState {
 
 export const resourcesState = new ResourcesState();
 
-resourcesState.addResource("lett", resourceLet);
+resourcesState.addResource("badLetReference", resourceBadLetReference);
+resourcesState.addResource("let", resourceLet);
 resourcesState.addResource("simple", resourceSimple);
 resourcesState.addResource("simple-func", resourceSimpleFunc);
 resourcesState.addResource("fib", resourceFib);
