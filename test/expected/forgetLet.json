@@ -1,0 +1,6 @@
+[
+  {
+    "$sType": "issue",
+    "message": "\"x\" is not a valid name for a value reference."
+  }
+]

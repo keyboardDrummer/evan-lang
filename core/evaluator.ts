@@ -28,7 +28,15 @@ export function evaluate(json: any): any {
 
 	function evaluateBinaryOperation(operation: sTypes.IBinaryOperation, context: IContext): any {
 		const leftEval = evaluateInt(operation.left, context);
+		if (isIssue(leftEval)) {
+			return leftEval;
+		}
+
 		const rightEval = evaluateInt(operation.right, context);
+		if (isIssue(rightEval)) {
+			return rightEval;
+		}
+
 		try {
 			switch (operation.operator) {
 				case "+": return leftEval + rightEval;
