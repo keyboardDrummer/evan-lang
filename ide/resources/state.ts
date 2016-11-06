@@ -1,5 +1,6 @@
 import {observable} from "mobx";
 
+const resourceNestedLetSameVariable = require("../../data/nestedLetSameVariable.json");
 const resourceNestedLet = require("../../data/nestedLet.json");
 const resourceForgetLet = require("../../data/forgetLet.json");
 const resourceBadLetReference = require("../../data/badLetReference.json");
@@ -29,6 +30,7 @@ export class ResourcesState {
 
 export const resourcesState = new ResourcesState();
 
+resourcesState.addResource("nestedLetSameVariable", resourceNestedLetSameVariable);
 resourcesState.addResource("nestedLet", resourceNestedLet);
 resourcesState.addResource("forgetLet", resourceForgetLet);
 resourcesState.addResource("badLetReference", resourceBadLetReference);

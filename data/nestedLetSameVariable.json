@@ -1,0 +1,24 @@
+[
+	{
+		"$sType": "let",
+		"name": "x",
+		"body": 2,
+		"value": {
+				"$sType": "binary operation",
+				"operator": "+",
+				"left": {
+					"$sType": "let",
+					"name": "x",
+					"body": 3,
+					"value": {
+						"$sType": "value reference",
+						"name": "x"
+					}
+				},
+				"right": {
+					"$sType": "value reference",
+					"name": "x"
+				}
+			}
+	}
+]
