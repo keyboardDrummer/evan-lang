@@ -1,10 +1,10 @@
 import {observable} from "mobx";
 
+const resourceLet = require("../../data/let.json");
 const resourceFib = require("../../data/fib.json");
 const resourceSimple = require("../../data/simple.json");
 const resourceSimpleFunc = require("../../data/simple-func.json");
 const metaModel = require("../../meta/meta-model.json");
-
 
 export class ResourcesState {
 
@@ -26,8 +26,9 @@ export class ResourcesState {
 
 export const resourcesState = new ResourcesState();
 
-resourcesState.addResource("fib", resourceFib);
+resourcesState.addResource("lett", resourceLet);
 resourcesState.addResource("simple", resourceSimple);
 resourcesState.addResource("simple-func", resourceSimpleFunc);
+resourcesState.addResource("fib", resourceFib);
 resourcesState.addResource("meta-model", metaModel);
 

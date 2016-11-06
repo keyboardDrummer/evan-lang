@@ -19,7 +19,8 @@ export function evaluate(json: any): any {
 		"function reference": evaluateFunctionReference,
 		"if-then-else": evaluateIfThenElse,
 		"issue": () => undefined,
-		"value reference": evaluateValueReference
+		"value reference": evaluateValueReference,
+		"let": evaluateLet
 	});
 
 	return evaluateInt(json, emptyContext);
@@ -92,6 +93,13 @@ export function evaluate(json: any): any {
 		return name && isString(name) && (name in context.letValues)
 			? context.letValues[name]
 			: makeIssue(`"${name}" is not a valid name for a value reference.`);
+	}
+
+	function evaluateLet(letExpression: sTypes.ILet, context: IContext): any {
+		const newContext = cloneContext(context);
+		const evaluatedValue = evaluateInt(letExpression.body, context);
+		newContext.letValues[letExpression.name] = evaluatedValue;
+		return evaluateInt(letExpression.value, newContext)
 	}
 
 }

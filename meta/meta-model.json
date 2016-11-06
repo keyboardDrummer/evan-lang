@@ -19,6 +19,17 @@
 			"text": "Simple comments."
 		}
 	},
+	"let": {
+		"properties": {
+			"name": { "type": "string" },
+			"body": { "type": "any" },
+			"value": { "type": "any" }
+		},	
+		"description": {
+			"$sType": "comments",
+			"text": "defines a local variable in a let expression."			
+		}
+	},
 	"function application": {
 		"properties": {
 			"function": { "type": "any" },
